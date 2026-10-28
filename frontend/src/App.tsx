@@ -117,7 +117,7 @@ export default function App() {
   }
 
   async function sendChat() {
-    if (!connectionId) { setError('Choose a connection first.'); return; }
+    
     if (!chatText.trim() || !snapshotId) return;
     setError(''); setChatDelta('');
     try {
