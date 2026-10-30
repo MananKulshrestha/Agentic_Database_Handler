@@ -16,14 +16,7 @@ export default function ProjectMembers() {
   const [error, setError] = useState('');
   if (!enabled) return null;
 
-  async function add() {
-    try {
-      setError('');
-      await post(`/projects/${project.data?.id}/members`, { username, password, role });
-      setUsername(''); setPassword('');
-      qc.invalidateQueries({ queryKey: ['members', project.data?.id] });
-    } catch (exc) { setError(String(exc)); }
-  }
+  
 
   async function change(userId: string, nextRole: Member['role']) {
     try {
