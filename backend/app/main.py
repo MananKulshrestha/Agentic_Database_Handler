@@ -89,6 +89,9 @@ async def lifespan(app: FastAPI):
         if not await db.scalar(select(Project.id)):
             db.add(Project())
             await db.commit()
+    from .workspace_restore import restore_workspace
+
+    await restore_workspace()
     await manager.start()
     yield
     await manager.stop()

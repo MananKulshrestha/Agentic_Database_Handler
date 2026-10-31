@@ -17,13 +17,13 @@ services:
       - key: DBH_ENCRYPTION_SECRET
         generateValue: true
       - key: AUTH_REQUIRED
-        value: "true"
+        value: "false"
       - key: AUTH_BOOTSTRAP_SECRET
         generateValue: true
       - key: OPENAI_ALLOW_SCHEMA_SHARING
-        value: "false"
+        value: "true"
       - key: TYPESAFE_ALLOW_SCHEMA_SHARING
-        value: "false"
+        value: "true"
 
 databases:
   - name: agentic-database-handler-db
